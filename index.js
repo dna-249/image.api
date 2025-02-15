@@ -9,11 +9,6 @@ const  upload = require("./cloudinary/upload");
 
 
 const app = express()
-app.use(bodyParser.json())
-
-app.use(bodyParser.urlencoded({
-    extended:true
-}))
 const corsConfig = {
     origin :["*"],
     credential : true,
