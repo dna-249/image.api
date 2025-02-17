@@ -6,14 +6,10 @@ const cors = require("cors");
 const multer = require("multer");
 
 
-const corsConfig = {
-    origin : ["https://fastapi-iota-lac.vercel.app"],
-    credential : true,
-    methods : ["GET","POST","PUT","DELETE"]
-}
 
-app.options("",cors(corsConfig))
-app.use(cors(corsConfig))
+
+
+app.use(cors())
 app.use(express.json())
 
 const storage = multer.diskStorage({ destination : "uploads/image",
