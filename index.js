@@ -30,9 +30,9 @@ app.get("/",(req,res)=>{
 })
 
 
-app.post('/api/users',upload.single("file"),(req,res) => {
+app.post('/api/users',(req,res) => {
     
-                    
+         upload.single("file")
 })
 
 
