@@ -31,8 +31,7 @@ app.get("/",(req,res)=>{
 
 
 app.post('/api/users',upload.single("file"),(req,res) => {
-    
-                    
+    console.log(req.file)             
 })
 
 
