@@ -9,7 +9,7 @@ const multer = require("multer");
 const corsConfig = {
     origin : ["https://fastapi-iota-lac.vercel.app"],
     credential : true,
-    methods : ["GET","POST","PUT","DELETE"]
+    methods : ["POST"]
 }
 
 app.options("",cors(corsConfig))
