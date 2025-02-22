@@ -9,18 +9,18 @@ const multer = require("multer");
 const corsConfig = {
     origin : ["https://fastapi-iota-lac.vercel.app"],
     credential : true,
-    methods : ["POST"]
+    methods : ["GET","POST","PUT","DELETE"]
 }
 
 app.options("",cors(corsConfig))
 app.use(cors(corsConfig))
 app.use(express.json())
 
-const storage = multer.diskStorage({ destination : "uploads/image",
+const storage = multer.diskStorage({ destination : "upload/",
     filename:(req, file, cb)=> {
 cb(null, `${file.originalname}`)
 }})
-app.use("/file", express.static("uploads/image"))
+app.use("/file", express.static("upload/"))
 const upload = multer({storage:storage})
 
 
@@ -30,7 +30,7 @@ app.get("/",(req,res)=>{
 })
 
 
-app.post('/api/users',(req,res) => {
+app.post('/api/user',upload.single("file"),(req,res) => {
     console.log(req.file)             
 })
 
