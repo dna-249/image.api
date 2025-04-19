@@ -7,9 +7,9 @@ const multer = require("multer");
 
 
 const corsConfig = {
-    origin : ["https://cloud-school-lifecamp.vercel.app"],
+    origin : ["https://register-two-xi.vercel.app"],
     credential : true,
-    methods : ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    methods : ["GET", "POST","PUT", "DELETE", "PATCH", "OPTIONS"],
     headers:["*"]
 }
 
