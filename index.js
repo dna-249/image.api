@@ -7,20 +7,21 @@ const multer = require("multer");
 
 
 const corsConfig = {
-    origin : ["https://fastapi-iota-lac.vercel.app"],
+    origin : ["https://cloud-school-lifecamp.vercel.app"],
     credential : true,
-    methods : ["GET","POST","PUT","DELETE"]
+    methods : ["GET","POST","PUT","DELETE"],
+    headers:["*"]
 }
 
 app.options("",cors(corsConfig))
 app.use(cors(corsConfig))
 app.use(express.json())
 
-const storage = multer.diskStorage({ destination : "upload/",
+const storage = multer.diskStorage({ destination : "image/",
     filename:(req, file, cb)=> {
 cb(null, `${file.originalname}`)
 }})
-app.use("/file", express.static("upload/"))
+app.use("/file", express.static("image/"))
 const upload = multer({storage:storage})
 
 
@@ -30,7 +31,7 @@ app.get("/",(req,res)=>{
 })
 
 
-app.post('/api/user',upload.single("file"),(req,res) => {
+app.post('/image',upload.single("file"),(req,res) => {
     console.log(req.file)             
 })
 
