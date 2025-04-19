@@ -32,7 +32,12 @@ app.get("/",(req,res)=>{
 
 
 app.post('/image',upload.single("file"),(req,res) => {
-    res.sendStatus(200).json("uploaded successfully")            
+    try {
+        res.status(200).json("uploaded successfully")  
+    } catch (error) {
+        res.status(500).json(error.message) 
+    }
+               
 })
 
 
