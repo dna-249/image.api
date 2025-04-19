@@ -32,7 +32,7 @@ app.get("/",(req,res)=>{
 
 
 app.post('/image',upload.single("file"),(req,res) => {
-    console.log(req.file)             
+    res.sendStatus(200).json("uploaded successfully")            
 })
 
 
