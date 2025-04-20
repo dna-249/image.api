@@ -17,11 +17,11 @@ app.options("",cors(corsConfig))
 app.use(cors(corsConfig))
 app.use(express.json())
 
-const storage = multer.diskStorage({ destination : "profileImage/",
+const storage = multer.diskStorage({ destination : "upload/",
     filename:(req, file, cb)=> {
 cb(null, `${file.originalname}`)
 }})
-app.use("/cloud", express.static("profileImage/"))
+app.use("/file", express.static("upload/"))
 const upload = multer({storage:storage})
 
 
@@ -31,7 +31,7 @@ app.get("/",(req,res)=>{
 })
 
 
-app.post('/image',upload.single("cloud"),(req,res) => {
+app.post('/post',upload.single("upload"),(req,res) => {
     try {
         res.status(200).json("uploaded successfully")  
     } catch (error) {
