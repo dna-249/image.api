@@ -50,7 +50,7 @@ const upload = multer({storage:storage})
    });
 
    // ...
-app.post('/image',upload.single("upload"),(req,res) => {
+app.post('/image',upload.single("file"),(req,res) => {
     try {
         res.status(200).json("uploaded successfully")  
     } catch (error) {
