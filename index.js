@@ -7,7 +7,7 @@ const multer = require("multer");
 
 
 const corsConfig = {
-    origin : ["https://cloud-database.vercel.app"],
+    origin : ["https://database-cloud.vercel.app"],
     credential : true,
     methods : ["GET", "POST","PUT", "DELETE", "PATCH", "OPTIONS"],
     headers:["*"]
