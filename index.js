@@ -22,7 +22,7 @@ const storage = multer.diskStorage({ destination : "upload/",
     filename:(req, file, cb)=> {
 cb(null, `${file.originalname}`)
 }})
-app.use("/file", express.static("upload/"))
+app.use("/file", express.static("upload"))
 const upload = multer({storage:storage})
 
 
