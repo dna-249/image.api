@@ -29,11 +29,11 @@ const upload = multer({storage:storage})
 
    
 
-    app.use(express.static('public'))
+    app.use(express.static('upload'))
 
    app.get('/file/:filename', (req, res) => {
      const filename = req.params.filename;
-     const filePath = path.join(__dirname, 'public', 'images', filename); // Corrected path
+     const filePath = path.join(__dirname, 'upload', 'images', filename); // Corrected path
 
      res.sendFile(filePath, (err) => {
        if (err) {
